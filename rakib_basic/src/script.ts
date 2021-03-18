@@ -82,6 +82,79 @@ emArray.forEach(element => {
 });
 
 
+var vehArray:Array<vehicles>=[];
+
+class vehicles{
+    brand:string;
+    manufac_data:(string|number);
+    manufacturer:string;
+    color:string;
+    speed:number;
+    wheels:number;
+    vehType:string;
+
+    constructor(brand:string,data:(string|number),nameOfmanufacturer:string,clr:string,spd:number, wheels:number,vehType:string="car"){
+        this.brand=brand;
+        
+        this.manufac_data=data;
+        this.manufacturer=nameOfmanufacturer;
+        this.color=clr;
+        this.speed=spd;
+        this.wheels=wheels;
+        this.vehType=vehType;
+        vehArray.push(this);
+    }
+    run(){
+        return`${this.speed} km/hr`;
+    }
+    info(){
+        return `<p>brand is ${this.brand} that was manufactuered by ${this.manufacturer} and data of manufacturer is ${this.manufac_data}  color  ${this.color} ${this.wheels}wheels car speed ${this.run()} </p>`;
+    }
+
+
+}
+
+
+new vehicles("bmw","2021MAR","Germany","red",230,4);
+new vehicles("bmw","2021MAR","Germany","red",230,4);
+new vehicles("VW","2002FEB","Germany","white",250,4);
+
+console.log(vehArray);
+
+
+vehArray.forEach(element => {
+    document.getElementById("demo2").innerHTML +="<hr>";    
+ 
+    document.getElementById("demo2").innerHTML +=element.info();    
+     
+ });
+
+
+
+ class ambulence extends vehicles{
+   
+
+    constructor(){
+        
+    }
+ }
+ class caravan extends vehicles{
+     
+}
+class bus extends vehicles{
+     
+}
+class coach extends vehicles{
+     
+}
+class Motorbike extends vehicles{
+     
+}
+class truck extends vehicles{
+     
+}
+
+
 
 
 

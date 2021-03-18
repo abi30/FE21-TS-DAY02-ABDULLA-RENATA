@@ -69,6 +69,78 @@ emArray.forEach(function (element) {
     document.getElementById("demo1").innerHTML += "<hr>";
     document.getElementById("demo1").innerHTML += element.info();
 });
+var vehArray = [];
+var vehicles = /** @class */ (function () {
+    function vehicles(brand, data, nameOfmanufacturer, clr, spd, wheels, vehType) {
+        if (vehType === void 0) { vehType = "car"; }
+        this.brand = brand;
+        this.manufac_data = data;
+        this.manufacturer = nameOfmanufacturer;
+        this.color = clr;
+        this.speed = spd;
+        this.wheels = wheels;
+        this.vehType = vehType;
+        vehArray.push(this);
+    }
+    vehicles.prototype.run = function () {
+        return this.speed + " km/hr";
+    };
+    vehicles.prototype.info = function () {
+        return "<p>brand is " + this.brand + " that was manufactuered by " + this.manufacturer + " and data of manufacturer is " + this.manufac_data + "  color  " + this.color + " " + this.wheels + "wheels car speed " + this.run() + " </p>";
+    };
+    return vehicles;
+}());
+new vehicles("bmw", "2021MAR", "Germany", "red", 230, 4);
+new vehicles("bmw", "2021MAR", "Germany", "red", 230, 4);
+new vehicles("VW", "2002FEB", "Germany", "white", 250, 4);
+console.log(vehArray);
+vehArray.forEach(function (element) {
+    document.getElementById("demo2").innerHTML += "<hr>";
+    document.getElementById("demo2").innerHTML += element.info();
+});
+var ambulence = /** @class */ (function (_super) {
+    __extends(ambulence, _super);
+    function ambulence() {
+        var _this = this;
+        return _this;
+    }
+    return ambulence;
+}(vehicles));
+var caravan = /** @class */ (function (_super) {
+    __extends(caravan, _super);
+    function caravan() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return caravan;
+}(vehicles));
+var bus = /** @class */ (function (_super) {
+    __extends(bus, _super);
+    function bus() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return bus;
+}(vehicles));
+var coach = /** @class */ (function (_super) {
+    __extends(coach, _super);
+    function coach() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return coach;
+}(vehicles));
+var Motorbike = /** @class */ (function (_super) {
+    __extends(Motorbike, _super);
+    function Motorbike() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Motorbike;
+}(vehicles));
+var truck = /** @class */ (function (_super) {
+    __extends(truck, _super);
+    function truck() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return truck;
+}(vehicles));
 //     console.log(`Hello ${user.age>50?"Sir":"Mr."} ${user.name}`);
 // var array: Array<Person> = [];
 // class Person {
