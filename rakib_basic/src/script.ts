@@ -268,6 +268,7 @@ let content:string="";
 vehArray.forEach(vehicle =>content+= createCard(vehicle));
 
 document.querySelector(`[data-meta="entry"]`)?.innerHTML=content;
+// document.getElementById("main_content")?.innerHTML=content;
 registerButtons();
 function createCard(vehicle:vehicles):string{
     let retVal:string=`<div class="col">

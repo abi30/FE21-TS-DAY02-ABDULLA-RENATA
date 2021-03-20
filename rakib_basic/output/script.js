@@ -224,6 +224,7 @@ console.log(vehArray);
 var content = "";
 vehArray.forEach(function (vehicle) { return content += createCard(vehicle); });
 (_a = document.querySelector("[data-meta=\"entry\"]")) === null || _a === void 0 ? void 0 : _a.innerHTML = content;
+// document.getElementById("main_content")?.innerHTML=content;
 registerButtons();
 function createCard(vehicle) {
     var retVal = "<div class=\"col\">\n    <div class=\"card h-100 \"  style=\"background-color: #1ff;\">\n    \n      <img class=\"img-fluid own\" src=\"" + vehicle.img + "\" class=\"card-img-top\" alt=\"...\">\n      <div class=\"card-body text-center\">\n        <h2 class=\"card-title\">" + vehicle.vehType + "</h2>\n        <h5 class=\"list-group-item\"><b>Brand:</b>" + vehicle.brand + "</h5>\n        <p class=\"card-text\" data-meta=\"info\" data-id=\"" + vehicle.id + "\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n        <button type=\"button\" class=\"btn btn-outline-success\"data-meta=\"button\" data-id=\"" + vehicle.id + "\" >info</button>\n        <p data-meta=\"price\" data-id=\"" + vehicle.id + "\"></p>\n        \n      </div>\n      <div class=\"card-footer\">\n        <small class=\"text-muted\">manufacture date: " + vehicle.manufac_date + "</small>\n      </div>\n    </div>\n  </div>";
